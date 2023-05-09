@@ -48,7 +48,12 @@ class MyHomePage extends StatelessWidget {
                 ),
                 const SizedBox(height: 20),
                 const Text(
-                  "This is not the web page you're looking for. But we'll help you find it!",
+                  "This is not the web page you're looking for.",
+                  style: TextStyle(fontSize: 14),
+                  textAlign: TextAlign.center,
+                ),
+                const Text(
+                  "But we'll help you find it!",
                   style: TextStyle(fontSize: 14),
                   textAlign: TextAlign.center,
                 ),
