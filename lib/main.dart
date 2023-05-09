@@ -13,8 +13,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'safadtm.web',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+      theme: Theme.of(context).copyWith(
+        primaryColor: Colors.green,
+        colorScheme: ColorScheme.fromSwatch().copyWith(
+          primary: Colors.green,
+          secondary: Colors.green,
+        ),
       ),
       home: const MyHomePage(),
     );
