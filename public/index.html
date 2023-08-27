@@ -4,13 +4,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
-  <title>Coming Soon</title>
+  <title>safadtm-portfolio</title>
 </head>
 <body>
-  <div class="container">
-    <img class="logo" src="images/loading.png" alt="Logo">
-    <h1 class="coming-soon">Coming Soon</h1>
-    <p class="author">-safadtm</p>
-  </div>
+  <header>
+    <nav class="site-navbar" id="ftco-navbar">
+      <div class="container">
+          <a class="navbar-brand" href="index.html">SFD.</a>
+          <button class="navbar-toggler" id="nav-toggle">
+              <span class="menu-icon">&#9776;</span> Menu
+          </button>
+          <ul class="nav-list" id="nav-list">
+              <li><a href="#home-section">Home</a></li>
+              <li><a href="#about-section">About</a></li>
+              <li><a href="#resume-section">Resume</a></li>
+              <li><a href="#services-section">Services</a></li>
+              <li><a href="#projects-section">Projects</a></li>
+              <li><a href="#contact-section">Contact</a></li>
+          </ul>
+      </div>
+  </nav>
+  
+  
+</header>
+<script>
+  document.getElementById("nav-toggle").addEventListener("click", function() {
+      document.getElementById("nav-list").classList.toggle("active");
+  });
+</script>
+
 </body>
 </html>
