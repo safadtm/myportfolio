@@ -106,7 +106,6 @@ var swiper = new Swiper(".portfolio__container", {
         clickable: true,
     },
 });
-/*==================== TESTIMONIAL ====================*/
 
 
 /*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
