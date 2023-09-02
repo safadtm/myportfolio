@@ -176,8 +176,8 @@ img {
 }
 
 
-.nav__toggle{
-  display:none;
+.nav__toggle {
+  display: none;
 }
 
 @media screen and (max-width:767px) {
@@ -192,10 +192,10 @@ img {
     border-radius: 1.5rem 1.5rem 0 0;
     transition: .3s;
   }
-  
-.nav__toggle{
-  display:initial;
-}
+
+  .nav__toggle {
+    display: initial;
+  }
 }
 
 .nav__list {
@@ -253,7 +253,7 @@ img {
 }
 
 .home__content {
-  grid-template-columns:1fr;
+  grid-template-columns: 1fr;
   padding-top: 3.5rem;
   align-items: center;
 }
@@ -323,7 +323,8 @@ img {
 
 .button--white {
   background-color: white;
-  color: var(--first-color-second)
+  color: var(--first-color-second);
+
 }
 
 .button--white:hover {
@@ -368,10 +369,19 @@ img {
   margin-bottom: var(--mb-2-5);
 }
 
+
 .about__info {
   display: flex;
+  flex: 1;
   justify-content: space-evenly;
   margin-bottom: var(--mb-2-5);
+}
+
+.about__info>div {
+  flex: 1;
+  /* Each inner div takes equal width */
+  text-align: center;
+  /* Center the content horizontally */
 }
 
 .about__info-title {
@@ -392,6 +402,11 @@ img {
 .about__buttons {
   display: flex;
   justify-content: center;
+}
+
+.cv__error {
+  display: none;
+  color: red;
 }
 
 /*==================== SKILLS ====================*/
@@ -567,6 +582,7 @@ img {
   color: var(--first-color);
   margin-bottom: 1rem;
 }
+
 .services__icon2 {
   display: block;
   font-size: 2rem;
@@ -651,6 +667,7 @@ img {
 /*==================== PORTFOLIO ====================*/
 .portfolio__img {
   width: 265px;
+  height: 280px;
   border-radius: .5rem;
   justify-self: center;
 }
@@ -879,24 +896,23 @@ img {
 /*==================== MEDIA QUERIES ====================*/
 /* For small devices */
 
-@media screen and (max-width:567px)
-{
-  .portfolio__content{
+@media screen and (max-width:567px) {
+  .portfolio__content {
     text-align: center;
   }
-  
+
   .home__content {
-    grid-template-columns:1fr;
-    padding-top:2rem;
+    grid-template-columns: 1fr;
+    padding-top: 2rem;
   }
 
   .home__img {
-    order:0;
+    order: 0;
     justify-self: center;
   }
 
-  .home__data{
-    text-align:center;
+  .home__data {
+    text-align: center;
   }
 }
 
@@ -916,16 +932,16 @@ img {
   }
 
   .home__content {
-    grid-template-columns:1fr;
+    grid-template-columns: 1fr;
   }
 
   .home__img {
-    order:0;
+    order: 0;
     justify-self: center;
   }
-  
-  .home__data{
-    text-align:left;
+
+  .home__data {
+    text-align: left;
   }
 
   .skills__title {
@@ -960,7 +976,7 @@ img {
 /* For medium devices */
 @media screen and (min-width:568px) {
   .home__content {
-    grid-template-columns:1fr 2fr;
+    grid-template-columns: 1fr 2fr;
   }
 
   .home__data {
@@ -992,7 +1008,7 @@ img {
   }
 
   .portfolio__content {
-      align-items: center;
+    align-items: center;
   }
 
   .skills__container {
@@ -1130,6 +1146,7 @@ img {
 
   .project {
     text-align: initial;
+    
   }
 
   .project__bg {
@@ -1192,8 +1209,8 @@ img {
     grid-template-columns: 3fr 1fr;
   }
 
-  .home__img{
-    order:1;
+  .home__img {
+    order: 1;
   }
 
 }
@@ -1201,8 +1218,8 @@ img {
 /* For large devices */
 @media screen and (min-width: 1024px) {
 
-  .home__img{
-    order:1;
+  .home__img {
+    order: 1;
   }
 
   .home__blob {

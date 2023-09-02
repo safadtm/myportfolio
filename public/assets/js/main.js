@@ -119,3 +119,86 @@ function scrollUp() {
         scrollUp.classList.remove('show-scroll');
 }
 window.addEventListener('scroll', scrollUp);
+
+
+/* CV ERROR MESSAGE */
+document.addEventListener('DOMContentLoaded', function () {
+    const downloadButton = document.getElementById('downloadButton');
+    const errorMessage = document.getElementById('errorMessage');
+
+    downloadButton.addEventListener('click', function (e) {
+        e.preventDefault();
+        errorMessage.style.display = 'block';
+
+        // Set a timer to hide the error message after 3000 milliseconds (3 seconds)
+        setTimeout(function () {
+            errorMessage.style.display = 'none';
+        }, 3000); // Adjust the time in milliseconds as needed
+    });
+});
+
+/* CONTACT FORM SUBMISSION */
+document.addEventListener('DOMContentLoaded', function () {
+    console.log('JavaScript loaded'); // Check if JavaScript is loaded
+
+    const submitButton = document.getElementById('submit-button');
+
+    submitButton.addEventListener('click', function (e) {
+        e.preventDefault(); // Prevent the default link behavior
+
+        console.log('Button clicked'); // Check if the button click event is triggered
+
+        // Get the form input values
+        const accessKey = document.querySelector('.contact__input[name="access_key"]').value;
+        const name = document.querySelector('.contact__input[name="name"]').value;
+        const email = document.querySelector('.contact__input[name="email"]').value;
+        const project = document.querySelector('.contact__input[name="project"]').value;
+        const message = document.querySelector('.contact__input[name="message"]').value;
+
+        // Log the collected data
+        console.log('Name:', name);
+        console.log('Email:', email);
+        console.log('Project:', project);
+        console.log('Message:', message);
+
+        // Create an object with the data to send to the API
+        const formData = {
+            access_key:accessKey,
+            name: name,
+            email: email,
+            project: project,
+            message: message,
+        };
+
+        // Send the data to the API endpoint using the fetch API
+        fetch('https://api.web3forms.com/submit', {
+            method: 'POST', // Use the appropriate HTTP method (POST)
+            headers: {
+                'Content-Type': 'application/json', // Specify the content type as JSON
+                'access_key': '3b4b520f-990b-4021-83ec-83d18814c3e7',
+            },
+            body: JSON.stringify(formData), // Convert the data to JSON format
+            mode: 'no-cors', // Set 'no-cors' mode
+
+        })
+         .then(response => {
+            console.log('Response status code:', response.status); // Log the status code
+
+                if (response.ok) {
+                    return response.json(); // Parse the response data if needed
+                } else {
+                    throw new Error('Failed to submit the form data.');
+                }
+            })
+            .then(data => {
+                // Handle the API response data as needed
+                console.log('API Response:', data);
+            })
+            .catch(error => {
+                // Handle any errors that occurred during the API request
+                console.error('API Error:', error);
+            });
+
+        document.getElementById('submit-form').reset();
+    });
+});
